@@ -1,17 +1,23 @@
 <?php
-class page_index extends Page
-{
-    function init()
-    {
+
+class page_index extends Page {
+
+    public $title='Dashboard';
+
+    function init() {
         parent::init();
+        // $this->add('View_Box')
+        //     ->setHTML('Welcome to your new Web App Project. Get started by opening '.
+        //         '<b>admin/page/index.php</b> file in your text editor and '.
+        //         '<a href="http://book.agiletoolkit.org/" target="_blank">Reading '.
+        //         'the documentation</a>.');
 
-        $this->add('H1')->set('Your Frontend');
-        $this->add('P')->set('This is a frontend of your web app but it does not have anything yet.');
-
-        $this->add('P')->set('Open frontend/page/index.php file in your text editor and follow documentation.');
-
-        $this->add('Button')
-            ->set(array('Agile Toolkit Book', 'icon'=>'book', 'swatch'=>'green'))
-            ->link('http://book.agiletoolkit.org/app/frontend.html');
+        $this->add('CRUD')->setModel('User');
+        // $gd = $this->add('Grid');
+        // $gd->setModel($this->app->auth->model->ref('Agreement'),['contact','amount','next_due_date']);
+        // $gd->addColumn('Pay');
+        // if($_GET['pay']){
+        //     return $this->js()->univ()->dialogURL('Pay');
+        // }
     }
 }
