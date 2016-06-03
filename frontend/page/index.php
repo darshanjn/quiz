@@ -13,6 +13,7 @@ class page_index extends Page {
         //         'the documentation</a>.');
 
         $this->add('CRUD')->setModel('User');
+        $this->add('View')->set('dragfj');
         // $gd = $this->add('Grid');
         // $gd->setModel($this->app->auth->model->ref('Agreement'),['contact','amount','next_due_date']);
         // $gd->addColumn('Pay');

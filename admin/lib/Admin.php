@@ -6,11 +6,14 @@ class Admin extends App_Admin {
         parent::init();
 
         $this->dbconnect();
-        $this->auth = $this->add('Auth');
-        $this->auth->setModel('User','name');
-        $this->auth->check();
+        $auth = $this->add('Auth');
+        $auth->setModel('quizuser','name','password');
+        //$auth->setModel('Contact','name',);
+        $auth->allowPage(['quizuser']);
+        $auth->check();
+        
         $this->api->menu->addItem('Dashboard', '/');
-        $this->api->menu->addItem('Contacts', 'contact');
+        $this->api->menu->addItem('Contact', 'contact');
         $this->api->menu->addMenuItem('/logout', 'Logout');
 
         // $m=$this->app->layout->add('Menu_Horizontal',null,'Top_Menu');
