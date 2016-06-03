@@ -9,7 +9,6 @@ class page_banking extends Page {
 
     function init() {
         parent::init();
-
         $this->app->stickyGET('contact_id');
     }
 
